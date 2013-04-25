@@ -65,10 +65,11 @@
     </head>
     <body>
         <div class="size2Wrapper wrapper clearfix">
-            <div class="size2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
-            <div class="size2">Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</div>
-            <div class="size2">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</div>
-            <div class="size2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+            <div class="size2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<div>testings</div></div>
+            <div class="size2">Morbi in sem quis <div>testings again</div> dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</div>
+            <div class="size2" style="width:50px;">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</div>
+            <div class="size2" style="width:50px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+            <div class="size2" style="width:40px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
         </div>
         <div class="size3Wrapper wrapper clearfix">
             <div class="size3">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</div>
@@ -79,13 +80,14 @@
             <div class="size3">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
         commodo consequat.</div>
+            <div class="size3">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
+            <div class="size3" style="width:230px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+
         </div>
 
         <script type="text/javascript">
-            $('.size2Wrapper').colresize({
-                column_count : 2,
-                container_children : '.size2',
-            });
+            $('.size2Wrapper').colresize();
+            $('.size3Wrapper').colresize();
         </script>
     </body>
 </html>
