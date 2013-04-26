@@ -5,7 +5,22 @@
             column_count        : 0,
             wrapper_class       : 'displayTable',
             wrapper             : this,
-            specific_children   : false
+            specific_children   : false,
+            resizeRow : function(cells, from, to){
+
+                console.log(from,to);
+
+                var arr = $.makeArray();
+
+                if(to != undefined){
+                    cells.slice(from, to).each(function(){
+
+                        arr.push($(this).height());
+                        console.log(arr)
+
+                    }).css('height', Math.max.apply( Math, arr ));
+                }
+            }
         }
 
         var options = $.extend(defaults,options);
@@ -28,7 +43,7 @@
 
                     if(index == cells.length-1){
 
-                        index_array.push(cells.length);
+                        index_array.push(cells.length-1);
 
                         position_top = 'stop';
 
@@ -36,38 +51,26 @@
 
                     if($(dom_ele).position().top != position_top){
 
+                        if(index_array[1]){
+
+                            index_array.shift();
+
+                        }
+
                         if(position_top != 'stop'){
 
                             index_array.push(index);
 
                         }
 
-                        var next_count = 0;
+                        options.resizeRow(cells,index_array[0],index_array[1]);
 
-                        $.each(index_array, function(i,val){
-
-                            var arr = $.makeArray();
-
-                            if(index_array[i+1]){
-
-                                cells.slice(next_count, index_array[i+1]).each(function(){
-
-                                    arr.push($(this).height());
-
-                                }).css('height', Math.max.apply( Math, arr ));
-
-                                next_count = index_array[i+1];
-                            }
-
-                        });
                     }
 
                     position_top = $(dom_ele).position().top;
 
                 });
 
-                
-				
 			}
 
         });
@@ -76,3 +79,4 @@
 
     }
 })(jQuery);
+
