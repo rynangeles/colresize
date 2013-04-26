@@ -1,3 +1,11 @@
+/*! Copyright (c) 2013 Ryan Angeles
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Version: 1.3
+ * 
+ * Requires: 1.2.2+
+ */
+ 
 (function($){
     $.fn.colresize = function(options){
 
